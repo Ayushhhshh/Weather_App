@@ -8,14 +8,7 @@ class WeatherScreen extends StatelessWidget {
     return MaterialApp( 
       debugShowCheckedModeBanner: false,
       home: Scaffold(
-        appBar: AppBar(
-        backgroundColor: Colors.black,
-        title: const Text(
-          "Weather App",
-          style: TextStyle(
-            color: Colors.white),
-          ),
-        )
+        backgroundColor: Colors.black
       ),
     );
   }
