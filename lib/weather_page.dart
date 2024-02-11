@@ -18,12 +18,21 @@ class WeatherScreen extends StatelessWidget {
      body: const Column(
       children: [Padding(
         padding: EdgeInsets.all(8.0),
+
+//                                            Main Card
+
         child: Placeholder(
           fallbackHeight: 240, 
         ),
       ),
       SizedBox(height: 15,),
+
+//                                          Weather Forecast
+
       Text("Weather Forecast", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,),),
+      
+//                                          Additional Info 
+
        Placeholder(
         fallbackHeight: 150, 
       ),SizedBox(height: 15,),
