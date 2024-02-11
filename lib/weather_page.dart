@@ -24,7 +24,7 @@ class WeatherScreen extends StatelessWidget {
           child: Card(
             elevation: 1,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
-            shadowColor: Colors.grey,
+            shadowColor: Colors.brown,
             child: Padding(
               padding: EdgeInsets.all(16.0),
               child: Column( 
