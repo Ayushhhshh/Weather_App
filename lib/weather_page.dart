@@ -16,14 +16,21 @@ class WeatherScreen extends StatelessWidget {
         )]
      ),
      body:const Padding(
-       padding: EdgeInsets.all(8.0),
+       padding: EdgeInsets.all(16.0),
        child: Column(
         children: [
           SizedBox(
           width: double.infinity,
           child: Card(
-            child: Column(
-              children: [Text("300°K", style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),)], 
+            elevation: 1,
+            shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
+            shadowColor: Colors.grey,
+            child: Padding(
+              padding: EdgeInsets.all(16.0),
+              child: Column( 
+                children:[Text("300°K", style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
+                SizedBox(height: 16,), Icon(Icons.cloud, size: 64,),SizedBox(height: 16,), Text("Rain",style: TextStyle(fontSize: 20),)], 
+              ),
             ),
           ),
         ),
