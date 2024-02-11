@@ -15,15 +15,20 @@ class WeatherScreen extends StatelessWidget {
             onPressed: () {}, icon: const Icon(Icons.refresh)
         )]
      ),
-     body: const Column(
+     body: const  Column(
       children: [Padding(
         padding: EdgeInsets.all(8.0),
 
 //                                            Main Card
 
-        child: Placeholder(
-          fallbackHeight: 240, 
-        ),
+        child: SizedBox(
+          width: double.infinity,
+          child: Card(
+            child: Column(
+              children: [Text("300°K", style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),)], 
+            ),
+          ),
+        )
       ),
       SizedBox(height: 15,),
 
@@ -45,4 +50,4 @@ class WeatherScreen extends StatelessWidget {
     );
   }
 }
-//                         13:24:22
+//                                          13:24:22
