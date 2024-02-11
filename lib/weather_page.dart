@@ -27,11 +27,11 @@ class WeatherScreen extends StatelessWidget {
       ),
       SizedBox(height: 15,),
 
-//                                          Weather Forecast
+//                                      Weather Forecast Cards
 
       Text("Weather Forecast", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 20,),),
-      
-//                                          Additional Info 
+
+//                                      Additional Info Card
 
        Placeholder(
         fallbackHeight: 150, 
