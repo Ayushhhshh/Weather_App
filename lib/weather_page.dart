@@ -22,9 +22,9 @@ class WeatherScreen extends StatelessWidget {
           SizedBox(
           width: double.infinity,
           child: Card(
-            elevation: 1,
+            elevation:1,
             shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
-            shadowColor: Colors.brown,
+            shadowColor: Colors.blueGrey,
             child: Padding(
               padding: EdgeInsets.all(16.0),
               child: Column( 
