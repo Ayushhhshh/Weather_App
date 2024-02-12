@@ -71,9 +71,21 @@ class WeatherScreen extends StatelessWidget {
             Row(
               mainAxisAlignment: MainAxisAlignment.spaceAround, 
                children: [
-                 AdditionalInfo(),
-                 AdditionalInfo(),
-                 AdditionalInfo(),
+                 AdditionalInfo(
+                  icon: Icons.cloud,
+                  label: "Humidity",
+                  value: "94",
+                 ),
+                 AdditionalInfo(
+                   icon: Icons.air,
+                  label: "Wind Speed",
+                  value: "7.67",
+                 ),
+                 AdditionalInfo(
+                   icon: Icons.beach_access,
+                  label: "Pressure",
+                  value: "1000",
+                 ),
                ],
              )],  
            ),
