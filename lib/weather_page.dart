@@ -1,6 +1,7 @@
 import 'dart:ui';
-
+// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
+// import 'package:flutter/widgets.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -46,28 +47,31 @@ class WeatherScreen extends StatelessWidget {
            
             Align(alignment:Alignment.centerLeft,
              child: Text("Weather Forecast", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22,),)),
-           SizedBox(height: 20,),
+           SizedBox(height: 17,),
            Row(
             children: [
               SizedBox(
                 width: 100,
                 child: Card(
-                  child: Column(
-                    children: [
-                      Text("09:00",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                    ],
+                  elevation: 1,
+                  shadowColor: Colors.grey ,
+                  child: Padding(
+                    padding: EdgeInsets.all(9.0),
+                    child: Column(
+                      children: [
+                        Text("09:00",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
+                        SizedBox(height: 8,),
+                        Icon(Icons.cloud),
+                        SizedBox(height: 8,),
+                        Text("320.16 ")
+                      ],
+                    ),
                   ),
                 ),
               )
             ]
            ),
            //                                      Additional Info Card
-           
-             Placeholder(
-              fallbackHeight: 150, 
-            ),SizedBox(height: 20,),
-            Align(alignment:Alignment.centerLeft,
-            ),
             SizedBox(height: 20,),
              Placeholder(
               fallbackHeight: 150, 
