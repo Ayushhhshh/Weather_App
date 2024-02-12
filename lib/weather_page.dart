@@ -1,7 +1,8 @@
 import 'dart:ui';
-// import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
-// import 'package:flutter/widgets.dart';
+import 'package:flutter/widgets.dart';
+import 'package:weather/additional_info.dart';
+import 'package:weather/hourly_forecast.dart';
 
 class WeatherScreen extends StatelessWidget {
   const WeatherScreen({super.key});
@@ -19,10 +20,10 @@ class WeatherScreen extends StatelessWidget {
         )] 
      ),
      body:ClipRRect(
-      borderRadius: const BorderRadius.all(Radius.circular(15)),
+      borderRadius:  const BorderRadius.all(Radius.circular(15)),
        child: BackdropFilter(
         filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-         child: const Padding(
+         child:  const Padding(
            padding: EdgeInsets.all(16.0),
            child: Column(
             children: [
@@ -47,40 +48,42 @@ class WeatherScreen extends StatelessWidget {
            
             Align(alignment:Alignment.centerLeft,
              child: Text("Weather Forecast", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22,),)),
-           SizedBox(height: 17,),
-           Row(
-            children: [
-              SizedBox(
-                width: 100,
-                child: Card(
-                  elevation: 1,
-                  shadowColor: Colors.grey ,
-                  child: Padding(
-                    padding: EdgeInsets.all(9.0),
-                    child: Column(
-                      children: [
-                        Text("09:00",style: TextStyle(fontSize: 16, fontWeight: FontWeight.bold),),
-                        SizedBox(height: 8,),
-                        Icon(Icons.cloud),
-                        SizedBox(height: 8,),
-                        Text("320.16 ")
-                      ],
-                    ),
-                  ),
-                ),
-              )
-            ]
+           SizedBox(height: 16,),
+           SingleChildScrollView(
+            scrollDirection: Axis.horizontal,
+             child: Row(
+              children: [
+             HourlyForecast(),
+                HourlyForecast(),
+                HourlyForecast(),
+                HourlyForecast(),
+                HourlyForecast()
+              ]
+             ),
            ),
            //                                      Additional Info Card
             SizedBox(height: 20,),
-             Placeholder(
-              fallbackHeight: 150, 
-            )],  
+            Align(alignment: Alignment.centerLeft,
+              child: Text("Additional Information",
+              style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),
+              ),
+            ),
+            SizedBox(height:20),
+            Row(
+              mainAxisAlignment: MainAxisAlignment.spaceAround, 
+               children: [
+                 AdditionalInfo(),
+                 AdditionalInfo(),
+                 AdditionalInfo(),
+               ],
+             )],  
            ),
          ),
        ),
      ),
-    );
+   );
   }
 }
+
+
 //                                          13:59:35
