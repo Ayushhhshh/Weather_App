@@ -3,17 +3,29 @@ import 'package:flutter/material.dart';
 import 'package:weather/additional_info.dart';
 import 'package:weather/hourly_forecast.dart';
 import 'package:http/http.dart' as http;
+import 'package:weather/secret.dart';
 
 
-class WeatherScreen extends StatelessWidget {
+class WeatherScreen extends StatefulWidget {
   const WeatherScreen({super.key});
 
+  @override
+  State<WeatherScreen> createState() => _WeatherScreenState();
+}
+
+class _WeatherScreenState extends State<WeatherScreen> {
+  void initstate(){
+    super.initState();
+    getCurrentWeather();
+  }
+
 //                                                      API 
-  
+
   Future getCurrentWeather() async{
-    String cityName = 'Jaipur'  ;
-    http.get(Uri.parse('https://api.openweathermap.org/data/2.5/weather?q=$cityName&APPID=f9d05fe8bebc321f057a04514bdad16a')
+    String cityName = 'Jaipur';
+    final res = await http.get(Uri.parse('https://api.openweathermap.org/data/2.5/weather?q=$cityName&APPID=$weatherApiKey')
     );
+  print(res.body);
   }
 
   @override
