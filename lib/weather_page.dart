@@ -1,3 +1,4 @@
+import 'dart:io';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:weather/additional_info.dart';
@@ -14,18 +15,20 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
-  void initstate(){
+  @override
+  // ignore: override_on_non_overriding_member
+  void initState() {
     super.initState();
     getCurrentWeather();
   }
-
+  
 //                                                      API 
 
   Future getCurrentWeather() async{
-    String cityName = 'Jaipur';
+    String cityName = 'London';
     final res = await http.get(Uri.parse('https://api.openweathermap.org/data/2.5/weather?q=$cityName&APPID=$weatherApiKey')
     );
-  print(res.body);
+    print(res.body);
   }
 
   @override
