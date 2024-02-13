@@ -26,7 +26,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Future getCurrentWeather() async{
     String cityName = 'London';
-    final res = await http.get(Uri.parse('https://api.openweathermap.org/data/2.5/weather?q=$cityName&APPID=$weatherApiKey')
+    final res = await http.get(Uri.parse('https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$weatherApiKey')
     );
     print(res.body);
   }
