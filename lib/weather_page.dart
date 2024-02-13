@@ -137,6 +137,4 @@ class _WeatherScreenState extends State<WeatherScreen> {
    );
   }
 }
-
-
 //                                          14:46:51
