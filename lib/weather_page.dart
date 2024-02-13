@@ -60,22 +60,22 @@ class WeatherScreen extends StatelessWidget {
                 HourlyForecast(
                    time: "12:00",
               icon: Icons.cloud,
-              temp: "320.16",
+              temp: "325.52",
                 ),
                 HourlyForecast(
                    time: "15:00",
-              icon: Icons.cloud,
-              temp: "320.16",
+              icon: Icons.sunny,
+              temp: "340.06",
                 ),
                 HourlyForecast(
                    time: "18:00",
               icon: Icons.cloud,
-              temp: "320.16",
+              temp: "333.22",
                 ),
                 HourlyForecast(
                    time: "21:00",
-              icon: Icons.cloud,
-              temp: "320.16",
+              icon: Icons.nights_stay,
+              temp: "312.23",
                 )
               ]
              ),
