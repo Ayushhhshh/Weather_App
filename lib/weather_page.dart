@@ -30,13 +30,17 @@ class _WeatherScreenState extends State<WeatherScreen> {
     final res = await http.get(Uri.parse('https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$weatherApiKey')
     );
 
-    jsonDecode(res.body);
+    final data  = jsonDecode(res.body);
+
+      if(data['cod']!= 200){
+        throw 'An unexpected error occured';
+      }
 
     } catch (e) { 
       throw e.toString();
     }
     }
-    
+  
 
 
   @override
