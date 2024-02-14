@@ -15,14 +15,16 @@ class WeatherScreen extends StatefulWidget {
 }
 
 class _WeatherScreenState extends State<WeatherScreen> {
+  double temp = 0;
+
   @override
   // ignore: override_on_non_overriding_member
   void initState() {
     super.initState();
     getCurrentWeather();
   }
-  
-//                                                      API 
+
+//                                                      API
 
   Future getCurrentWeather() async{
     try {
@@ -33,16 +35,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
     final data  = jsonDecode(res.body);
 
       if(data['cod']!= 200){
-        throw 'An unexpected error occured';
+        throw 'An unexpected error occured'; 
       }
-
-    } catch (e) { 
+      temp = data['list'][0]['main']['temp'];    
+      } catch (e) { 
       throw e.toString();
     }
     }
   
-
-
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -52,9 +52,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
             centerTitle: true,
             actions: [
           IconButton(
-            onPressed: () {}, icon: const Icon(Icons.refresh)
+            onPressed: () {
+              // ignore: avoid_print
+              print(temp);
+            }, icon: const Icon(Icons.refresh)
         )] 
      ),
+     
      body:ClipRRect(
       borderRadius:  const BorderRadius.all(Radius.circular(15)),
        child: BackdropFilter(
