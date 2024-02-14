@@ -60,7 +60,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
         }
 
         if (snapshot.hasError){
-          return Text(snapshot.error.toString());
+          return Center(child: Text(snapshot.error.toString()));
         }
 
          return ClipRRect(
