@@ -1,3 +1,4 @@
+import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/material.dart';
 import 'package:weather/additional_info.dart';
@@ -24,11 +25,19 @@ class _WeatherScreenState extends State<WeatherScreen> {
 //                                                      API 
 
   Future getCurrentWeather() async{
-    String cityName = 'London';
+    try {
+      String cityName = 'London';
     final res = await http.get(Uri.parse('https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$weatherApiKey')
     );
-    print(res.body);
-  }
+
+    jsonDecode(res.body);
+
+    } catch (e) { 
+      throw e.toString();
+    }
+    }
+    
+
 
   @override
   Widget build(BuildContext context) {
