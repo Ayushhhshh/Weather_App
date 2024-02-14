@@ -55,7 +55,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
       future: getCurrentWeather(),
        builder: (context , snapshot) {
         print(snapshot);
-        print(snapshot.connectionState);
+        if (snapshot.connectionState == ConnectionState.waiting){
+          return Center(child: CircularProgressIndicator.adaptive());
+        }
+
+        if (snapshot.hasError){
+          return Text(snapshot.error.toString());
+        }
+
          return ClipRRect(
         borderRadius:  const BorderRadius.all(Radius.circular(15)),
          child: BackdropFilter(
