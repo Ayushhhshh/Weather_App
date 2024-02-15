@@ -69,6 +69,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
         final currentTemp = currentWeatherData['main']['temp'];
         final currentSky = currentWeatherData ['weather'][0]['main'];
+        final pressure = currentWeatherData ['main'] ['pressure'];
+        final humidity = currentWeatherData ['main'] ['humidity'];
+        final windSpeed = currentWeatherData ['wind']['speed'];
 
          return ClipRRect(
         borderRadius:  const BorderRadius.all(Radius.circular(15)),
@@ -140,23 +143,23 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 ),
               ),
               const SizedBox(height:20),
-              const Row(
+               Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround, 
                  children: [
                    AdditionalInfo(
                     icon: Icons.cloud,
                     label: "Humidity",
-                    value: "94",
+                    value: humidity.toString(),
                    ),
                    AdditionalInfo(
                      icon: Icons.air,
                     label: "Wind Speed",
-                    value: "7.67",
+                    value: windSpeed.toString(),
                    ),
                    AdditionalInfo(
                      icon: Icons.beach_access,
                     label: "Pressure",
-                    value: "1000",
+                    value: pressure.toString(),
                    ),
                  ],
                )],  
