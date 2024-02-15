@@ -18,7 +18,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
 //                                                      API
 
-  Future getCurrentWeather() async{
+  Future<Map<String,dynamic>> getCurrentWeather() async{
     try {
       String cityName = 'London';
     final res = await http.get(Uri.parse('https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$weatherApiKey')
@@ -59,10 +59,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
         if (snapshot.connectionState == ConnectionState.waiting){
           return Center(child: CircularProgressIndicator.adaptive());
         }
-
         if (snapshot.hasError){
           return Center(child: Text(snapshot.error.toString()));
         }
+
+        final data = snapshot.data!;
 
          return ClipRRect(
         borderRadius:  const BorderRadius.all(Radius.circular(15)),
