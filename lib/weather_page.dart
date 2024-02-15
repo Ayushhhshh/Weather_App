@@ -64,13 +64,15 @@ class _WeatherScreenState extends State<WeatherScreen> {
         }
 
         final data = snapshot.data!;
+        final currentTemp = data ['list'][0]['main']['temp'];
+        final currentSky = data ['list'][0]['weather'][0]['main'];
 
          return ClipRRect(
         borderRadius:  const BorderRadius.all(Radius.circular(15)),
          child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-           child:   const Padding(
-             padding: EdgeInsets.all(16.0),
+           child:    Padding(
+             padding: const EdgeInsets.all(16.0),
              child: Column(
               children: [
                 SizedBox(
@@ -78,24 +80,24 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 child: Card(
                   elevation:1,
                   shadowColor: Colors.grey ,
-                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
+                  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
                   child: Padding(
-                    padding: EdgeInsets.all(16.0),
+                    padding: const EdgeInsets.all(16.0),
                     child: Column( 
-                      children:[Text(' 200 K', style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
-                      SizedBox(height: 16,), Icon(Icons.cloud, size: 64,),SizedBox(height: 16,), Text("Rain",style: TextStyle(fontSize: 20),)], 
+                      children:[Text('$currentTemp K', style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
+                      const SizedBox(height: 16,), const Icon(Icons.cloud, size: 64,),const SizedBox(height: 16,), Text("$currentSky",style: TextStyle(fontSize: 20),)], 
                     ),
                   ),
                 ),
               ),
-              SizedBox(height: 20,),
+              const SizedBox(height: 20,),
              
              //                                      Weather Forecast Cards
              
-              Align(alignment:Alignment.centerLeft,
+              const Align(alignment:Alignment.centerLeft,
                child: Text("Weather Forecast", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22,),)),
-             SizedBox(height: 16,),
-             SingleChildScrollView(
+             const SizedBox(height: 16,),
+             const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
                child: Row(
                 children: [
@@ -128,14 +130,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
                ),
              ),
              //                                      Additional Info Card
-              SizedBox(height: 20,),
-              Align(alignment: Alignment.centerLeft,
+              const SizedBox(height: 20,),
+              const Align(alignment: Alignment.centerLeft,
                 child: Text("Additional Information",
                 style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),
                 ),
               ),
-              SizedBox(height:20),
-              Row(
+              const SizedBox(height:20),
+              const Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround, 
                  children: [
                    AdditionalInfo(
