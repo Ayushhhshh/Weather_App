@@ -101,7 +101,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
              //                                      Weather Forecast Cards
              
               const Align(alignment:Alignment.centerLeft,
-               child: Text("Weather Forecast", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22,),)),
+               child: Text("Hourly Forecast", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22,),)),
              const SizedBox(height: 16,),
              const SingleChildScrollView(
               scrollDirection: Axis.horizontal,
