@@ -64,8 +64,11 @@ class _WeatherScreenState extends State<WeatherScreen> {
         }
 
         final data = snapshot.data!;
-        final currentTemp = data ['list'][0]['main']['temp'];
-        final currentSky = data ['list'][0]['weather'][0]['main'];
+
+        final currentWeatherData = data['list'][0];
+
+        final currentTemp = currentWeatherData['main']['temp'];
+        final currentSky = currentWeatherData ['weather'][0]['main'];
 
          return ClipRRect(
         borderRadius:  const BorderRadius.all(Radius.circular(15)),
@@ -85,7 +88,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     padding: const EdgeInsets.all(16.0),
                     child: Column( 
                       children:[Text('$currentTemp K', style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
-                      const SizedBox(height: 16,), const Icon(Icons.cloud, size: 64,),const SizedBox(height: 16,), Text("$currentSky",style: TextStyle(fontSize: 20),)], 
+                      const SizedBox(height: 16,),  Icon(currentSky == 'Clouds' || currentSky == 'Rain' ? Icons.cloud : Icons.sunny, size: 64,),const SizedBox(height: 16,), Text("$currentSky",style: const TextStyle(fontSize: 20),)], 
                     ),
                   ),
                 ),
