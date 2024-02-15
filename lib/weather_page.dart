@@ -57,7 +57,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
        builder: (context , snapshot) {
         print(snapshot);
         if (snapshot.connectionState == ConnectionState.waiting){
-          return Center(child: CircularProgressIndicator.adaptive());
+          return const Center(child: CircularProgressIndicator.adaptive());
         }
         if (snapshot.hasError){
           return Center(child: Text(snapshot.error.toString()));
@@ -69,8 +69,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
         borderRadius:  const BorderRadius.all(Radius.circular(15)),
          child: BackdropFilter(
           filter: ImageFilter.blur(sigmaX: 10, sigmaY: 10),
-           child:   Padding(
-             padding: const EdgeInsets.all(16.0),
+           child:   const Padding(
+             padding: EdgeInsets.all(16.0),
              child: Column(
               children: [
                 SizedBox(
@@ -78,24 +78,24 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 child: Card(
                   elevation:1,
                   shadowColor: Colors.grey ,
-                  shape: const RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
+                  shape: RoundedRectangleBorder(borderRadius: BorderRadius.all(Radius.circular(15))),
                   child: Padding(
-                    padding: const EdgeInsets.all(16.0),
+                    padding: EdgeInsets.all(16.0),
                     child: Column( 
-                      children:[Text(' 200 K', style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
-                      const SizedBox(height: 16,), const Icon(Icons.cloud, size: 64,),const SizedBox(height: 16,), const Text("Rain",style: TextStyle(fontSize: 20),)], 
+                      children:[Text(' 200 K', style: TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
+                      SizedBox(height: 16,), Icon(Icons.cloud, size: 64,),SizedBox(height: 16,), Text("Rain",style: TextStyle(fontSize: 20),)], 
                     ),
                   ),
                 ),
               ),
-              const SizedBox(height: 20,),
+              SizedBox(height: 20,),
              
              //                                      Weather Forecast Cards
              
-              const Align(alignment:Alignment.centerLeft,
+              Align(alignment:Alignment.centerLeft,
                child: Text("Weather Forecast", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22,),)),
-             const SizedBox(height: 16,),
-             const SingleChildScrollView(
+             SizedBox(height: 16,),
+             SingleChildScrollView(
               scrollDirection: Axis.horizontal,
                child: Row(
                 children: [
@@ -128,14 +128,14 @@ class _WeatherScreenState extends State<WeatherScreen> {
                ),
              ),
              //                                      Additional Info Card
-              const SizedBox(height: 20,),
-              const Align(alignment: Alignment.centerLeft,
+              SizedBox(height: 20,),
+              Align(alignment: Alignment.centerLeft,
                 child: Text("Additional Information",
                 style: TextStyle(fontSize: 22,fontWeight: FontWeight.bold),
                 ),
               ),
-              const SizedBox(height:20),
-              const Row(
+              SizedBox(height:20),
+              Row(
                 mainAxisAlignment: MainAxisAlignment.spaceAround, 
                  children: [
                    AdditionalInfo(
