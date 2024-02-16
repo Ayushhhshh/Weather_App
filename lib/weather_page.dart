@@ -106,7 +106,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
              
               const Align(alignment:Alignment.centerLeft,
                child: Text("Hourly Forecast", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22,),)),
-             
+              const SizedBox(height : 16),
                 SizedBox(
                   height  :125,
                   child: ListView.builder(
