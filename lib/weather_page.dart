@@ -20,7 +20,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Future<Map<String,dynamic>> getCurrentWeather() async{
     try {
-      String cityName = 'Jaipur';
+      String cityName = 'London';
     final res = await http.get(Uri.parse('https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$weatherApiKey')
     );
 
@@ -91,7 +91,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                     padding: const EdgeInsets.all(16.0),
                     child: Column( 
                       children:[Text('$currentTemp K', style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
-                      const SizedBox(height: 16,),  Icon(currentSky == 'Clouds' || currentSky == 'Rain' || currentSky == 'Clear' ? Icons.cloud : Icons.sunny, size: 64,),const SizedBox(height: 16,), Text("$currentSky",style: const TextStyle(fontSize: 20),)], 
+                      const SizedBox(height: 16,),  Icon(currentSky == 'Clouds' || currentSky == 'Rain' ? Icons.cloud : Icons.sunny, size: 64,),const SizedBox(height: 16,), Text("$currentSky",style: const TextStyle(fontSize: 20),)], 
                     ),
                   ),
                 ),
@@ -110,7 +110,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   for(int i=0;i<5;i++)
                HourlyForecast(
                 time: data ['list'] [i + 1] ['dt'].toString(),
-                icon: Icons.cloud,
+                icon: data['list'][i + 1] ['weather'][0]['main'] == 'Clouds' || data['list'][i + 1] ['weather'][0]['main'] == 'Rain'? Icons.cloud : Icons.sunny,
                 temp: data ['list'] [i + 1] ['main'] ['temp'].toString(),
                ),
                 ]
