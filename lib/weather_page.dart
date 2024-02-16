@@ -1,6 +1,7 @@
 import 'dart:convert';
 import 'dart:ui';
 import 'package:flutter/material.dart';
+import 'package:flutter/widgets.dart';
 import 'package:weather/additional_info.dart';
 import 'package:weather/hourly_forecast.dart';
 import 'package:http/http.dart' as http;
@@ -102,20 +103,40 @@ class _WeatherScreenState extends State<WeatherScreen> {
              
               const Align(alignment:Alignment.centerLeft,
                child: Text("Hourly Forecast", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22,),)),
-             const SizedBox(height: 16,),
-              SingleChildScrollView(
-              scrollDirection: Axis.horizontal,
-               child: Row(
-                children: [
-                  for(int i=0;i<5;i++)
-               HourlyForecast(
-                time: data ['list'] [i + 1] ['dt'].toString(),
-                icon: data['list'][i + 1] ['weather'][0]['main'] == 'Clouds' || data['list'][i + 1] ['weather'][0]['main'] == 'Rain'? Icons.cloud : Icons.sunny,
-                temp: data ['list'] [i + 1] ['main'] ['temp'].toString(),
-               ),
-                ]
-               ),
-             ),
+             
+            //   SingleChildScrollView(
+            //   scrollDirection: Axis.horizontal,
+            //    child: Row(
+            //     children: [
+            //       for(int i=0;i<5;i++)
+            //    HourlyForecast(
+            //     time: data ['list'] [i + 1] ['dt'].toString(),
+            //     icon: data['list'][i + 1] ['weather'][0]['main'] == 'Clouds' || data['list'][i + 1] ['weather'][0]['main'] == 'Rain'? Icons.cloud : Icons.sunny,
+            //     temp: data ['list'] [i + 1] ['main'] ['temp'].toString(),
+            //    ),
+            //     ]
+            //    ),
+            //  ),
+            // const SizedBox(height: 16,),
+                SizedBox(
+                  height  :125,
+                  child: ListView.builder(
+                    scrollDirection: Axis.horizontal,
+                  itemCount: 5,
+                  itemBuilder: (context,index) {
+                    final hourlyForecast =  data ['list'] [index + 1];
+                    final hourlySky = hourlyForecast ['weather'][0]['main'];
+                    return HourlyForecast(
+                      time: hourlyForecast['dt'].toString(),
+                      icon: hourlySky == 'Clouds' || hourlySky == 'Rain' ? Icons.cloud : Icons.sunny,
+                      temp: hourlyForecast ['main']['temp'].toString(),
+                        );
+                  },
+                                ),
+                ),
+
+
+
              //                                      Additional Info Card
               const SizedBox(height: 20,),
               const Align(alignment: Alignment.centerLeft,
