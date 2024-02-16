@@ -50,6 +50,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
             actions: [
           IconButton(
             onPressed: () {
+              setState(() {
+              });
             }, icon: const Icon(Icons.refresh)
         )] 
      ),
@@ -159,6 +161,9 @@ class _WeatherScreenState extends State<WeatherScreen> {
        );
        },
      ),
+      bottomNavigationBar: BottomAppBar(
+        height: 65,
+        child: Center(child: Text("Made by Ayush Jain 🚀", style: TextStyle(fontWeight: FontWeight.bold, fontSize: 16),)),),  
    );
   }
 }
