@@ -111,7 +111,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                HourlyForecast(
                 time: data ['list'] [i + 1] ['dt'].toString(),
                 icon: Icons.cloud,
-                temp: "320.16",
+                temp: data ['list'] [i + 1] ['main'] ['temp'].toString(),
                ),
                 ]
                ),
