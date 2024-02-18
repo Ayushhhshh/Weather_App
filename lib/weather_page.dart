@@ -52,7 +52,8 @@ class _WeatherScreenState extends State<WeatherScreen> {
               setState(() {
               });
             }, icon: const Icon(Icons.refresh)
-        )] 
+        ),
+        ], 
      ),
      
      body: FutureBuilder(
