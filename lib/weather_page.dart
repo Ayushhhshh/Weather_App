@@ -142,12 +142,12 @@ class _WeatherScreenState extends State<WeatherScreen> {
                    AdditionalInfo(
                     icon: Icons.cloud,
                     label: "Humidity",
-                    value: humidity.toString(),
+                    value: '$humidity%'.toString(),
                    ),
                    AdditionalInfo(
                      icon: Icons.air,
                     label: "Wind Speed",
-                    value: windSpeed.toString(),
+                    value: '$windSpeed km/hr'.toString(),
                    ),
                    AdditionalInfo(
                      icon: Icons.beach_access,
