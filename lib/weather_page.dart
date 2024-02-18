@@ -114,21 +114,21 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   itemCount: 5,
                   itemBuilder: (context,index) {
                     final hourlyForecast =  data ['list'] [index + 1];
-//                    final celcius2  = (hourlyForecast - 273.15);
                     final hourlySky = hourlyForecast ['weather'][0]['main'];
                     final time = DateTime.parse(hourlyForecast['dt_txt']);
+                    final tempKelvin = hourlyForecast['main']['temp'] as double;
+                    final tempCelsius = (tempKelvin - 273.15).toStringAsFixed(2);
                     return HourlyForecast(
                       time: DateFormat.j().format(time),
                       icon: hourlySky == 'Clouds' || hourlySky == 'Rain' ? Icons.cloud : Icons.sunny,
-                      temp: hourlyForecast ['main']['temp'].toStringAsFixed(2),
+                      temp: '$tempCelsius°C',
                         );
                   },
                 ),
                 ),
-
-
-
+                
              //                                      Additional Info Card
+
               const SizedBox(height: 20,),
               const Align(alignment: Alignment.centerLeft,
                 child: Text("Additional Information",
