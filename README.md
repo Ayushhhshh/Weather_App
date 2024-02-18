@@ -1,17 +1,61 @@
-# weather
+# Weather App
 
-A new Flutter project.
+This is a simple weather application built with Flutter that allows users to check the current weather forecast for a specific city.
+
+## Features
+
+- Displays the current temperature, weather condition, and hourly forecast.
+- Provides additional information such as maximum temperature, minimum temperature, humidity, and wind speed.
+- Users can refresh the weather data by tapping the refresh button.
+
+## Screenshots
+
+![Screenshot 1](screenshots/screenshot1.png)
+![Screenshot 2](screenshots/screenshot2.png)
 
 ## Getting Started
 
-This project is a starting point for a Flutter application.
+To run this application locally, follow these steps:
 
-A few resources to get you started if this is your first Flutter project:
+1. Clone this repository:
+```bash
+git clone https://github.com/your_username/weather_app.git
+```
 
-- [Lab: Write your first Flutter app](https://docs.flutter.dev/get-started/codelab)
-- [Cookbook: Useful Flutter samples](https://docs.flutter.dev/cookbook)
+2. Navigate to the project directory:
+```bash
+cd weather_app
+```
 
-For help getting started with Flutter development, view the
-[online documentation](https://docs.flutter.dev/), which offers tutorials,
-samples, guidance on mobile development, and a full API reference.
-# Weather_App
+3. Install dependencies:
+```bash
+flutter pub get
+```
+
+4. Run the application:
+```bash
+flutter run
+```
+
+## Dependencies
+
+This application uses the following dependencies:
+
+- `flutter/material.dart`: The core Flutter framework for building UI.
+- `intl`: Provides internationalization and localization support.
+- `http`: A package for making HTTP requests.
+- `weather`: A package for fetching weather data.
+- `secret`: A package containing API keys (not included in this repository).
+
+## API
+
+This application uses the OpenWeatherMap API to fetch weather data. You need to obtain an API key from [OpenWeatherMap](https://openweathermap.org/api) and replace it in the `secret.dart` file.
+
+## Contributing
+
+Contributions are welcome! If you have any suggestions, bug fixes, or feature requests, please open an issue or submit a pull request.
+
+## License
+
+This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
+
