@@ -72,7 +72,10 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
         final currentTemp = currentWeatherData['main']['temp'];
         final currentSky = currentWeatherData ['weather'][0]['main'];
-        final pressure = currentWeatherData ['main'] ['pressure'];
+        final Max = currentWeatherData ['main'] ['temp_max'];
+        final tempMax = (Max - 273.15).toStringAsFixed(2);
+        final Min = currentWeatherData ['main'] ['temp_min'];
+        final tempMin = (Min - 273.15).toStringAsFixed(2);
         final humidity = currentWeatherData ['main'] ['humidity'];
         final windSpeed = currentWeatherData ['wind']['speed'];
         final celcius1  = (currentTemp - 273.15).toStringAsFixed(2);
@@ -140,6 +143,16 @@ class _WeatherScreenState extends State<WeatherScreen> {
                 mainAxisAlignment: MainAxisAlignment.spaceAround, 
                  children: [
                    AdditionalInfo(
+                     icon: Icons.thermostat,
+                    label: "Max Temp",
+                    value: '$tempMax°C'.toString(),
+                   ),
+                   AdditionalInfo(
+                     icon: Icons.ac_unit,
+                    label: "Min Temp",
+                    value: '$tempMin°C'.toString(),
+                   ),
+                   AdditionalInfo(
                     icon: Icons.cloud,
                     label: "Humidity",
                     value: '$humidity%'.toString(),
@@ -148,11 +161,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
                      icon: Icons.air,
                     label: "Wind Speed",
                     value: '$windSpeed km/hr'.toString(),
-                   ),
-                   AdditionalInfo(
-                     icon: Icons.beach_access,
-                    label: "Pressure",
-                    value: pressure.toString(),
                    ),
                  ],
                )],  

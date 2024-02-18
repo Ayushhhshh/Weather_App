@@ -20,7 +20,6 @@ class AdditionalInfo extends StatelessWidget {
        Text(label),
        const SizedBox(height: 12),
        Text(value, style: const TextStyle(fontWeight: FontWeight.bold),)
-    
      ],
     );
   }
