@@ -21,7 +21,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
 
   Future<Map<String,dynamic>> getCurrentWeather() async{
     try {
-      String cityName = 'London';
+      String cityName = 'Jaipur';
     final res = await http.get(Uri.parse('https://api.openweathermap.org/data/2.5/forecast?q=$cityName&APPID=$weatherApiKey')
     );
 
@@ -75,6 +75,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
         final pressure = currentWeatherData ['main'] ['pressure'];
         final humidity = currentWeatherData ['main'] ['humidity'];
         final windSpeed = currentWeatherData ['wind']['speed'];
+        final celcius1  = (currentTemp - 273.15).toStringAsFixed(2);
 
          return ClipRRect(
         borderRadius:  const BorderRadius.all(Radius.circular(15)),
@@ -93,7 +94,7 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   child: Padding(
                     padding: const EdgeInsets.all(16.0),
                     child: Column( 
-                      children:[Text('$currentTemp K', style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
+                      children:[Text('$celcius1°C', style: const TextStyle(fontSize: 32, fontWeight: FontWeight.bold),),
                       const SizedBox(height: 16,),  Icon(currentSky == 'Clouds' || currentSky == 'Rain' ? Icons.cloud : Icons.sunny, size: 64,),const SizedBox(height: 16,), Text("$currentSky",style: const TextStyle(fontSize: 20),)], 
                     ),
                   ),
@@ -113,12 +114,13 @@ class _WeatherScreenState extends State<WeatherScreen> {
                   itemCount: 5,
                   itemBuilder: (context,index) {
                     final hourlyForecast =  data ['list'] [index + 1];
+//                    final celcius2  = (hourlyForecast - 273.15);
                     final hourlySky = hourlyForecast ['weather'][0]['main'];
                     final time = DateTime.parse(hourlyForecast['dt_txt']);
                     return HourlyForecast(
                       time: DateFormat.j().format(time),
                       icon: hourlySky == 'Clouds' || hourlySky == 'Rain' ? Icons.cloud : Icons.sunny,
-                      temp: hourlyForecast ['main']['temp'].toString(),
+                      temp: hourlyForecast ['main']['temp'].toStringAsFixed(2),
                         );
                   },
                 ),
