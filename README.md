@@ -10,7 +10,8 @@ This is a simple weather application built with Flutter that allows users to che
 
 ## Screenshots
 
-<img src="https://github.com/Ayushhhshh/Weather_App/assets/120326710/9fead5d0-d402-465e-a1f4-ea1851b010d5" alt="dark" width="250">
+<img src="https://github.com/Ayushhhshh/Weather_App/assets/120326710/9fead5d0-d402-465e-a1f4-ea1851b010d5" alt="dark" width="250">&nbsp;&nbsp;&nbsp;&nbsp;
+<img src="https://github.com/Ayushhhshh/Weather_App/assets/120326710/b7188063-4f9e-4fe8-8633-5e4c81daf043" alt="dark" width="250">
 
 ## Getting Started
 
