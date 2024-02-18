@@ -10,8 +10,7 @@ This is a simple weather application built with Flutter that allows users to che
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
+<img src="https://github-production-user-asset-6210df.s3.amazonaws.com/120326710/305731869-eb26295e-35a4-4291-9f1c-cb33bcee14f7.png?X-Amz-Algorithm=AWS4-HMAC-SHA256&X-Amz-Credential=AKIAVCODYLSA53PQK4ZA%2F20240218%2Fus-east-1%2Fs3%2Faws4_request&X-Amz-Date=20240218T164935Z&X-Amz-Expires=300&X-Amz-Signature=77a123e938b4d6ffdcaf53dfddd41c29a4c0014762565124d74bfe15685a4f16&X-Amz-SignedHeaders=host&actor_id=120326710&key_id=0&repo_id=753231075" alt="dark" width="250">
 
 ## Getting Started
 
