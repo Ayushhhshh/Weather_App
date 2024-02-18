@@ -10,8 +10,7 @@ This is a simple weather application built with Flutter that allows users to che
 
 ## Screenshots
 
-![Screenshot 1](screenshots/screenshot1.png)
-![Screenshot 2](screenshots/screenshot2.png)
+<img src="https://github.com/Ayushhhshh/Weather_App/assets/120326710/9fead5d0-d402-465e-a1f4-ea1851b010d5" alt="dark" width="250">
 
 ## Getting Started
 
@@ -59,3 +58,4 @@ Contributions are welcome! If you have any suggestions, bug fixes, or feature re
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
 
+## Hope you liked my project Glad to see you here ☺️
