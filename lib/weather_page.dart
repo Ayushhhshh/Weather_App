@@ -43,8 +43,6 @@ class _WeatherScreenState extends State<WeatherScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
         appBar: AppBar(
-          leading: IconButton(onPressed: () {
-          },icon: Icon(Icons.search),),
             title: const Text("Weather App",
                 style: TextStyle(fontWeight: FontWeight.bold)),
             centerTitle: true,
